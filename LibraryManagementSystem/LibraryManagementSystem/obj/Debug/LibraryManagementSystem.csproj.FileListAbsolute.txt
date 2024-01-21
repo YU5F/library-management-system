@@ -11,3 +11,4 @@ C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\L
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.formMain.resources
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.BooksForm.resources

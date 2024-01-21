@@ -14,9 +14,10 @@ namespace LibraryManagementSystem
 {
     public partial class formMain : Form
     {
-        //Fields for active button info
+        //Fields
         private IconButton currentButton;
         private Panel buttonLeftBorder;
+        private Form currentChildForm;
 
         public formMain()
         {
@@ -85,9 +86,29 @@ namespace LibraryManagementSystem
         }
         #endregion
 
+        #region OpenFormInsidePanel
+        //Opening another form inside container panel for avoiding navigation problems
+        private void OpenChildForm(Form form)
+        {
+            //Close current form if opening a new one
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = form;
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            pnlContainer.Controls.Add(form);
+            pnlContainer.Tag = form;
+            form.BringToFront();
+            form.Show();
+        }
+        #endregion
         private void ibtnBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
+            OpenChildForm(new BooksForm());
         }
 
         private void ibtnSignIn_Click(object sender, EventArgs e)
@@ -99,6 +120,28 @@ namespace LibraryManagementSystem
         private void ibtnSignOut_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
+        }
+
+        private void ibtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ibtnMaximize_Click(object sender, EventArgs e)
+        {
+            if(WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void ibtnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState= FormWindowState.Minimized;
         }
     }
 }
