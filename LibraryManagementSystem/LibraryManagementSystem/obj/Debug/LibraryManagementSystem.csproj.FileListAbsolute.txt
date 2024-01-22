@@ -16,3 +16,11 @@ C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\L
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Controls.CustomTextBox.resources
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Forms.LoginForm.resources
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Forms.RegisterForm.resources
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\EntityFramework.dll
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\System.Data.SQLite.dll
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\EntityFramework.xml
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\System.Data.SQLite.xml

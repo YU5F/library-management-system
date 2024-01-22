@@ -1,7 +1,9 @@
-﻿using System;
+﻿using LibraryManagementSystem.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,9 +19,11 @@ namespace LibraryManagementSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BooksForm_Load(object sender, EventArgs e)
         {
-            this.Close();
+            string q = "SELECT * FROM Books";
+            DataTable dt = CRUD.Sort(q);
+            dataGridView1.DataSource = dt;
         }
     }
 }
