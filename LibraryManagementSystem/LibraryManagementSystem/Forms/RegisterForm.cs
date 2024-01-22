@@ -10,16 +10,19 @@ using System.Windows.Forms;
 
 namespace LibraryManagementSystem.Forms
 {
-    public partial class LoginForm : Form
+    public partial class RegisterForm : Form
     {
-        public LoginForm()
+        private SignForm signForm;
+        public RegisterForm(SignForm parentForm)
         {
             InitializeComponent();
+            signForm = parentForm;
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            
+            signForm.EnableLink();
+            this.Close();
         }
     }
 }

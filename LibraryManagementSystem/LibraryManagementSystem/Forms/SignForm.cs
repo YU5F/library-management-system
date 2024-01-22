@@ -13,8 +13,6 @@ namespace LibraryManagementSystem
 {
     public partial class SignForm : Form
     {
-        //Fields
-        private Form currentChildForm;
         public SignForm()
         {
             InitializeComponent();
@@ -26,12 +24,6 @@ namespace LibraryManagementSystem
         }
         public void OpenChildForm(Form form)
         {
-            //Close current form if opening a new one
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = form;
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
@@ -39,6 +31,20 @@ namespace LibraryManagementSystem
             pnlSignForm.Tag = form;
             form.BringToFront();
             form.Show();
+        }
+        public void EnableLink()
+        {
+            linkSignUp.Enabled = true;
+            label1.Visible = true;
+            linkSignUp.Visible = true;
+        }
+
+        private void linkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenChildForm(new RegisterForm(this));
+            linkSignUp.Enabled = false;
+            label1.Visible = false;
+            linkSignUp.Visible = false;
         }
     }
 }

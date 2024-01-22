@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new LibraryManagementSystem.Controls.CustomTextBox();
             this.txtEmail = new LibraryManagementSystem.Controls.CustomTextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMail
@@ -39,7 +40,7 @@
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
-            this.lblMail.Location = new System.Drawing.Point(111, 86);
+            this.lblMail.Location = new System.Drawing.Point(124, 96);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(70, 23);
             this.lblMail.TabIndex = 2;
@@ -50,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
-            this.label1.Location = new System.Drawing.Point(68, 130);
+            this.label1.Location = new System.Drawing.Point(81, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 23);
             this.label1.TabIndex = 2;
@@ -63,7 +64,7 @@
             this.txtPassword.BorderSize = 2;
             this.txtPassword.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(249, 115);
+            this.txtPassword.Location = new System.Drawing.Point(262, 125);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(7);
@@ -80,7 +81,7 @@
             this.txtEmail.BorderSize = 2;
             this.txtEmail.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtEmail.ForeColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(249, 71);
+            this.txtEmail.Location = new System.Drawing.Point(262, 81);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
@@ -90,12 +91,25 @@
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = true;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.FlatAppearance.BorderSize = 2;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnLogin.Location = new System.Drawing.Point(397, 195);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(115, 41);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
             this.ClientSize = new System.Drawing.Size(593, 317);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
@@ -116,5 +130,6 @@
         private System.Windows.Forms.Label label1;
         private Controls.CustomTextBox txtEmail;
         private Controls.CustomTextBox txtPassword;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
