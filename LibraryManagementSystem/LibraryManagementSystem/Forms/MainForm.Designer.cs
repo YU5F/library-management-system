@@ -61,9 +61,10 @@
             // 
             // ibtnMinimize
             // 
-            this.ibtnMinimize.BackColor = System.Drawing.Color.DarkGray;
+            this.ibtnMinimize.BackColor = System.Drawing.Color.Transparent;
             this.ibtnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.ibtnMinimize.FlatAppearance.BorderSize = 0;
+            this.ibtnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ibtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.ibtnMinimize.IconColor = System.Drawing.Color.White;
@@ -78,9 +79,10 @@
             // 
             // ibtnMaximize
             // 
-            this.ibtnMaximize.BackColor = System.Drawing.Color.DarkGray;
+            this.ibtnMaximize.BackColor = System.Drawing.Color.Transparent;
             this.ibtnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
             this.ibtnMaximize.FlatAppearance.BorderSize = 0;
+            this.ibtnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ibtnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.ibtnMaximize.IconColor = System.Drawing.Color.White;
@@ -95,9 +97,10 @@
             // 
             // ibtnExit
             // 
-            this.ibtnExit.BackColor = System.Drawing.Color.Red;
+            this.ibtnExit.BackColor = System.Drawing.Color.Transparent;
             this.ibtnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.ibtnExit.FlatAppearance.BorderSize = 0;
+            this.ibtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.ibtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             this.ibtnExit.IconColor = System.Drawing.Color.White;

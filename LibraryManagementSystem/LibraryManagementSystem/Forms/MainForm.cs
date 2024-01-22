@@ -88,7 +88,7 @@ namespace LibraryManagementSystem
 
         #region OpenFormInsidePanel
         //Opening another form inside container panel for avoiding navigation problems
-        private void OpenChildForm(Form form)
+        public void OpenChildForm(Form form)
         {
             //Close current form if opening a new one
             if (currentChildForm != null)
@@ -114,7 +114,7 @@ namespace LibraryManagementSystem
         private void ibtnSignIn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
-            
+            OpenChildForm(new SignForm());
         }
 
         private void ibtnSignOut_Click(object sender, EventArgs e)

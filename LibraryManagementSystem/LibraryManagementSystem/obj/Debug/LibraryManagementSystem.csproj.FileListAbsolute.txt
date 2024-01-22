@@ -12,3 +12,6 @@ C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\L
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.formMain.resources
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.BooksForm.resources
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.SignForm.resources
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Controls.CustomTextBox.resources
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Forms.LoginForm.resources
