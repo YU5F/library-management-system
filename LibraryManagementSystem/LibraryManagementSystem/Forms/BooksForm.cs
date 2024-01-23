@@ -21,14 +21,12 @@ namespace LibraryManagementSystem
 
         private void BooksForm_Load(object sender, EventArgs e)
         {
-            DataRefresh("Books", dataGridView1);
+            Methods.Instance.DataRefresh("Books", dataGridView1);
         }
 
-        public void DataRefresh(string tableName, DataGridView dgw)
+        private void button1_Click(object sender, EventArgs e)
         {
-            string q = "SELECT * FROM " + tableName;
-            DataTable dt = CRUD.Sort(q);
-            dgw.DataSource = dt;
+            MessageBox.Show(AuthenticatedUser.LoggedInUser.Name.ToString());
         }
     }
 }

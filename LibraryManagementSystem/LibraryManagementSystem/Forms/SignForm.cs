@@ -20,17 +20,7 @@ namespace LibraryManagementSystem
 
         private void SignForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new LoginForm());
-        }
-        public void OpenChildForm(Form form)
-        {
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            pnlSignForm.Controls.Add(form);
-            pnlSignForm.Tag = form;
-            form.BringToFront();
-            form.Show();
+            Methods.Instance.OpenChildForm(new LoginForm(), pnlSignForm);
         }
         public void EnableLink()
         {
@@ -41,7 +31,7 @@ namespace LibraryManagementSystem
 
         private void linkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenChildForm(new RegisterForm(this));
+            Methods.Instance.OpenChildForm(new RegisterForm(this), pnlSignForm);
             linkSignUp.Enabled = false;
             label1.Visible = false;
             linkSignUp.Visible = false;

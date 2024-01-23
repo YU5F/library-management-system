@@ -96,13 +96,7 @@ namespace LibraryManagementSystem
                 currentChildForm.Close();
             }
             currentChildForm = form;
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            pnlContainer.Controls.Add(form);
-            pnlContainer.Tag = form;
-            form.BringToFront();
-            form.Show();
+            Methods.Instance.OpenChildForm(form, pnlContainer);
         }
         #endregion
         private void ibtnBooks_Click(object sender, EventArgs e)

@@ -31,18 +31,9 @@ namespace LibraryManagementSystem.Forms
         private void btnRegister_Click(object sender, EventArgs e)
         {
             //Check if textboxes are empty
-            foreach (Control c in this.Controls)
+            if (Methods.Instance.TextControlChecker(this.Controls))
             {
-                if (c is CustomTextBox)
-                {
-                    CustomTextBox txtbox = c as CustomTextBox;
-                    if (txtbox.Texts == string.Empty)
-                    {
-                        string txtboxName = txtbox.Name;
-                        MessageBox.Show(txtboxName.Substring(3) + " is empty");
-                        return;
-                    }
-                }
+                return;
             }
             Register();
         }
