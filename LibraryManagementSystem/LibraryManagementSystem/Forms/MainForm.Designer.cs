@@ -39,6 +39,7 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.ibtnSignOut = new FontAwesome.Sharp.IconButton();
             this.pnlTopGrip.SuspendLayout();
             this.pnlSideNavBar.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -130,6 +131,7 @@
             // 
             this.pnlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlButtons.Controls.Add(this.ibtnSignOut);
             this.pnlButtons.Controls.Add(this.ibtnSignIn);
             this.pnlButtons.Controls.Add(this.ibtnBooks);
             this.pnlButtons.Location = new System.Drawing.Point(0, 229);
@@ -214,6 +216,29 @@
             this.pnlContainer.Size = new System.Drawing.Size(855, 586);
             this.pnlContainer.TabIndex = 2;
             // 
+            // ibtnSignOut
+            // 
+            this.ibtnSignOut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ibtnSignOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
+            this.ibtnSignOut.FlatAppearance.BorderSize = 0;
+            this.ibtnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnSignOut.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ibtnSignOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
+            this.ibtnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.ibtnSignOut.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
+            this.ibtnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnSignOut.IconSize = 32;
+            this.ibtnSignOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnSignOut.Location = new System.Drawing.Point(0, 247);
+            this.ibtnSignOut.Name = "ibtnSignOut";
+            this.ibtnSignOut.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnSignOut.Size = new System.Drawing.Size(215, 55);
+            this.ibtnSignOut.TabIndex = 2;
+            this.ibtnSignOut.Text = "Sign Out";
+            this.ibtnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnSignOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnSignOut.UseVisualStyleBackColor = true;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +274,7 @@
         private FontAwesome.Sharp.IconButton ibtnExit;
         private FontAwesome.Sharp.IconButton ibtnMinimize;
         private FontAwesome.Sharp.IconButton ibtnMaximize;
+        private FontAwesome.Sharp.IconButton ibtnSignOut;
     }
 }
 

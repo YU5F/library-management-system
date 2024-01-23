@@ -14,5 +14,19 @@ namespace LibraryManagementSystem.Classes
         public string Email { get; set; }
         public string PhotoPath { get; set; }
 
+        public User()
+        {
+            SetDefaultValues();
+        }
+
+        public void SetDefaultValues()
+        {
+            Id = -1;
+            Email = "none";
+            PhotoPath = "default.png";
+            Name = "Gues";
+            Surname = "Visitor";
+        }
+
     }
 }

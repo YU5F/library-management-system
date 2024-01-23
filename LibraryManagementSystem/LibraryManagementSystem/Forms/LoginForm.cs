@@ -13,9 +13,11 @@ namespace LibraryManagementSystem.Forms
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private formMain parentForm;
+        public LoginForm(formMain parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -45,6 +47,10 @@ namespace LibraryManagementSystem.Forms
                         PhotoPath = dt.Rows[0]["PhotoPath"].ToString()
                     };
                     AuthenticatedUser.LoggedInUser = loggedInUser;
+                    MessageBox.Show("Login successfull");
+                    txtEmail.Texts = "";
+                    txtPassword.Texts = "";
+                    parentForm.LoggedInInterface();
                 }
                 else
                 {

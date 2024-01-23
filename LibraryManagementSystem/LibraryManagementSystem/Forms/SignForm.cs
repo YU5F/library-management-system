@@ -20,7 +20,7 @@ namespace LibraryManagementSystem
 
         private void SignForm_Load(object sender, EventArgs e)
         {
-            Methods.Instance.OpenChildForm(new LoginForm(), pnlSignForm);
+            Methods.Instance.OpenChildForm(new LoginForm(new formMain()), pnlSignForm);
         }
         public void EnableLink()
         {

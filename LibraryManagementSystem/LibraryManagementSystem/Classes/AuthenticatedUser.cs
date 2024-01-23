@@ -8,6 +8,11 @@ namespace LibraryManagementSystem.Classes
 {
     public class AuthenticatedUser
     {
-        public static User LoggedInUser { get; set; } = new User { Id = -1, Email = "none", Name = "Guest",  PhotoPath = "default.png", Surname = "Visitor"};
+        public static User LoggedInUser { get; set; } = new User();
+
+        public static void SignOut()
+        {
+            LoggedInUser.SetDefaultValues();
+        }
     }
 }

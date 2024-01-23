@@ -26,6 +26,8 @@ namespace LibraryManagementSystem
             buttonLeftBorder = new Panel();
             buttonLeftBorder.Size = new Size(7, 55);
             pnlButtons.Controls.Add(buttonLeftBorder);
+            ibtnSignOut.Enabled = false;
+            ibtnSignOut.Visible = false;
 
 
             //Remove border of the form
@@ -99,6 +101,16 @@ namespace LibraryManagementSystem
             Methods.Instance.OpenChildForm(form, pnlContainer);
         }
         #endregion
+
+        public void LoggedInInterface()
+        {
+            ibtnSignIn.Enabled = false;
+            ibtnSignIn.Visible = false;
+            ibtnSignOut.Enabled = true;
+            ibtnSignOut.Visible = true;
+            currentChildForm = null;
+            MessageBox.Show("Method called");
+        }
         private void ibtnBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
