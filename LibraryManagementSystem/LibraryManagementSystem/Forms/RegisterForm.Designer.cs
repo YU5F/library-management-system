@@ -30,17 +30,17 @@
         {
             this.btnBack = new FontAwesome.Sharp.IconButton();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtName = new LibraryManagementSystem.Controls.CustomTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSurname = new LibraryManagementSystem.Controls.CustomTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEmail = new LibraryManagementSystem.Controls.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPassword = new LibraryManagementSystem.Controls.CustomTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPhotoSelect = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.txtSurname = new LibraryManagementSystem.Controls.CustomTextBox();
+            this.txtPassword = new LibraryManagementSystem.Controls.CustomTextBox();
+            this.txtEmail = new LibraryManagementSystem.Controls.CustomTextBox();
+            this.txtName = new LibraryManagementSystem.Controls.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,23 +70,6 @@
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Name";
             // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
-            this.txtName.BorderColor = System.Drawing.Color.White;
-            this.txtName.BorderSize = 2;
-            this.txtName.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(156, 67);
-            this.txtName.Multiline = false;
-            this.txtName.Name = "txtName";
-            this.txtName.Padding = new System.Windows.Forms.Padding(7);
-            this.txtName.PasswordChar = false;
-            this.txtName.Size = new System.Drawing.Size(127, 38);
-            this.txtName.TabIndex = 4;
-            this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -97,23 +80,6 @@
             this.label1.Size = new System.Drawing.Size(107, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Surname";
-            // 
-            // txtSurname
-            // 
-            this.txtSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
-            this.txtSurname.BorderColor = System.Drawing.Color.White;
-            this.txtSurname.BorderSize = 2;
-            this.txtSurname.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtSurname.ForeColor = System.Drawing.Color.White;
-            this.txtSurname.Location = new System.Drawing.Point(427, 67);
-            this.txtSurname.Multiline = false;
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSurname.PasswordChar = false;
-            this.txtSurname.Size = new System.Drawing.Size(127, 38);
-            this.txtSurname.TabIndex = 4;
-            this.txtSurname.Texts = "";
-            this.txtSurname.UnderlinedStyle = true;
             // 
             // label2
             // 
@@ -126,23 +92,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Email";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
-            this.txtEmail.BorderColor = System.Drawing.Color.White;
-            this.txtEmail.BorderSize = 2;
-            this.txtEmail.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.ForeColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(156, 108);
-            this.txtEmail.Multiline = false;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
-            this.txtEmail.PasswordChar = false;
-            this.txtEmail.Size = new System.Drawing.Size(398, 38);
-            this.txtEmail.TabIndex = 4;
-            this.txtEmail.Texts = "";
-            this.txtEmail.UnderlinedStyle = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -153,23 +102,6 @@
             this.label3.Size = new System.Drawing.Size(113, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
-            this.txtPassword.BorderColor = System.Drawing.Color.White;
-            this.txtPassword.BorderSize = 2;
-            this.txtPassword.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(156, 152);
-            this.txtPassword.Multiline = false;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(7);
-            this.txtPassword.PasswordChar = true;
-            this.txtPassword.Size = new System.Drawing.Size(398, 38);
-            this.txtPassword.TabIndex = 4;
-            this.txtPassword.Texts = "";
-            this.txtPassword.UnderlinedStyle = true;
             // 
             // label4
             // 
@@ -216,6 +148,75 @@
             this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
+            this.txtSurname.BorderColor = System.Drawing.Color.White;
+            this.txtSurname.BorderSize = 2;
+            this.txtSurname.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtSurname.ForeColor = System.Drawing.Color.White;
+            this.txtSurname.Location = new System.Drawing.Point(427, 67);
+            this.txtSurname.Multiline = false;
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSurname.PasswordChar = false;
+            this.txtSurname.Size = new System.Drawing.Size(127, 38);
+            this.txtSurname.TabIndex = 2;
+            this.txtSurname.Texts = "";
+            this.txtSurname.UnderlinedStyle = true;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
+            this.txtPassword.BorderColor = System.Drawing.Color.White;
+            this.txtPassword.BorderSize = 2;
+            this.txtPassword.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
+            this.txtPassword.Location = new System.Drawing.Point(156, 152);
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPassword.PasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(398, 38);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Texts = "";
+            this.txtPassword.UnderlinedStyle = true;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
+            this.txtEmail.BorderColor = System.Drawing.Color.White;
+            this.txtEmail.BorderSize = 2;
+            this.txtEmail.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.Location = new System.Drawing.Point(156, 108);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.Size = new System.Drawing.Size(398, 38);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = true;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
+            this.txtName.BorderColor = System.Drawing.Color.White;
+            this.txtName.BorderSize = 2;
+            this.txtName.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.Location = new System.Drawing.Point(156, 67);
+            this.txtName.Multiline = false;
+            this.txtName.Name = "txtName";
+            this.txtName.Padding = new System.Windows.Forms.Padding(7);
+            this.txtName.PasswordChar = false;
+            this.txtName.Size = new System.Drawing.Size(127, 38);
+            this.txtName.TabIndex = 1;
+            this.txtName.Texts = "";
+            this.txtName.UnderlinedStyle = true;
             // 
             // RegisterForm
             // 

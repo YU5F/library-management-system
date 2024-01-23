@@ -21,9 +21,14 @@ namespace LibraryManagementSystem
 
         private void BooksForm_Load(object sender, EventArgs e)
         {
-            string q = "SELECT * FROM Books";
+            DataRefresh("Books", dataGridView1);
+        }
+
+        public void DataRefresh(string tableName, DataGridView dgw)
+        {
+            string q = "SELECT * FROM " + tableName;
             DataTable dt = CRUD.Sort(q);
-            dataGridView1.DataSource = dt;
+            dgw.DataSource = dt;
         }
     }
 }
