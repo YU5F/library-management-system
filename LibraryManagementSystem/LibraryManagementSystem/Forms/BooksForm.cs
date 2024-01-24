@@ -78,7 +78,7 @@ namespace LibraryManagementSystem
             remainingDays = (int)(deadline - borrowedDate).TotalDays;
             bookCategory = selectedCategory;
 
-            if (DoesBookExist(bookISBN))
+            if (DoesBookExist(bookISBN, borrowedByID))
             {
                 MessageBox.Show("You've already borrowed this book", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -93,9 +93,9 @@ namespace LibraryManagementSystem
             }
         }
 
-        private bool DoesBookExist(int ISBN)
+        private bool DoesBookExist(int ISBN, int visitorId)
         {
-            string q = "Select * from BorrowInformation where BookISBN = '" + ISBN + "'";
+            string q = "Select * from BorrowInformation where BookISBN = '" + ISBN + "' AND BorrowedByID = '" + visitorId + "'";
             DataTable dt = CRUD.Sort(q);
             if (dt.Rows.Count > 0)
             {

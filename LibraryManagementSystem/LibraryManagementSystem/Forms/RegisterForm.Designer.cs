@@ -34,14 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picturePhoto = new System.Windows.Forms.PictureBox();
             this.btnPhotoSelect = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtSurname = new LibraryManagementSystem.Controls.CustomTextBox();
             this.txtPassword = new LibraryManagementSystem.Controls.CustomTextBox();
             this.txtEmail = new LibraryManagementSystem.Controls.CustomTextBox();
             this.txtName = new LibraryManagementSystem.Controls.CustomTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -114,14 +114,15 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Photo";
             // 
-            // pictureBox1
+            // picturePhoto
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(18)))), ((int)(((byte)(43)))));
-            this.pictureBox1.Location = new System.Drawing.Point(293, 214);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 91);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.picturePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(18)))), ((int)(((byte)(43)))));
+            this.picturePhoto.Location = new System.Drawing.Point(293, 214);
+            this.picturePhoto.Name = "picturePhoto";
+            this.picturePhoto.Size = new System.Drawing.Size(92, 91);
+            this.picturePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturePhoto.TabIndex = 5;
+            this.picturePhoto.TabStop = false;
             // 
             // btnPhotoSelect
             // 
@@ -135,6 +136,7 @@
             this.btnPhotoSelect.TabIndex = 6;
             this.btnPhotoSelect.Text = "Select";
             this.btnPhotoSelect.UseVisualStyleBackColor = true;
+            this.btnPhotoSelect.Click += new System.EventHandler(this.btnPhotoSelect_Click);
             // 
             // btnRegister
             // 
@@ -226,7 +228,7 @@
             this.ClientSize = new System.Drawing.Size(593, 317);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnPhotoSelect);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picturePhoto);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
@@ -240,7 +242,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +260,7 @@
         private System.Windows.Forms.Label label3;
         private Controls.CustomTextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picturePhoto;
         private System.Windows.Forms.Button btnPhotoSelect;
         private System.Windows.Forms.Button btnRegister;
     }

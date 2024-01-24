@@ -36,7 +36,7 @@ namespace LibraryManagementSystem
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-        #region HighlightActiveButton
+        #region Highlight Active Button
         //Methods for highlighting active button
         private void ActivateButton(object sender, Color color)
         {
@@ -73,7 +73,7 @@ namespace LibraryManagementSystem
         }
         #endregion
 
-        #region DragFormByPanel
+        #region Drag Form By Panel
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -88,7 +88,7 @@ namespace LibraryManagementSystem
         }
         #endregion
 
-        #region OpenFormInsidePanel
+        #region Open Form Inside Panel
         //Opening another form inside container panel for avoiding navigation problems
         public void OpenChildForm(Form form)
         {
@@ -102,6 +102,7 @@ namespace LibraryManagementSystem
         }
         #endregion
 
+        #region Interface Changes
         public void LoggedInInterface()
         {
             ibtnSignOut.Visible = true;
@@ -133,6 +134,9 @@ namespace LibraryManagementSystem
             currentChildForm = form;
             Methods.Instance.OpenChildForm(form, pnlContainer);
         }
+        #endregion
+
+        #region Button Click Methods
         private void ibtnBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
@@ -189,5 +193,6 @@ namespace LibraryManagementSystem
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
         }
+        #endregion
     }
 }
