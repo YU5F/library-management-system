@@ -31,17 +31,16 @@ namespace LibraryManagementSystem
 
 
             //Remove border of the form
-            this.Text= string.Empty;
+            this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
         }
         #region HighlightActiveButton
         //Methods for highlighting active button
         private void ActivateButton(object sender, Color color)
         {
-            if(sender != null)
+            if (sender != null)
             {
                 DisableButton();
 
@@ -60,7 +59,7 @@ namespace LibraryManagementSystem
             }
         }
 
-        private void DisableButton()
+        public void DisableButton()
         {
             if (currentButton != null)
             {
@@ -79,7 +78,7 @@ namespace LibraryManagementSystem
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
-        [DllImport("user32.DLL", EntryPoint ="SendMessage")]
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void pnlTopGrip_MouseDown(object sender, MouseEventArgs e)
@@ -108,7 +107,7 @@ namespace LibraryManagementSystem
             ibtnSignOut.Visible = true;
             ibtnSignIn.Visible = false;
             ibtnSignIn.Enabled = false;
-            ibtnSignOut.Enabled = true; 
+            ibtnSignOut.Enabled = true;
             ibtnMyBooks.Visible = true;
             ibtnMyBooks.Enabled = true;
             currentChildForm.Close();
@@ -124,12 +123,15 @@ namespace LibraryManagementSystem
             ibtnMyBooks.Enabled = false;
             currentChildForm.Close();
             DisableButton();
-
+        }
+        public void ChangeChildForm(Form form)
+        {
+            Methods.Instance.OpenChildForm(form, pnlContainer);
         }
         private void ibtnBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
-            OpenChildForm(new BooksForm());
+            OpenChildForm(new BooksForm(this));
         }
 
         private void ibtnSignIn_Click(object sender, EventArgs e)
@@ -150,7 +152,7 @@ namespace LibraryManagementSystem
 
         private void ibtnMaximize_Click(object sender, EventArgs e)
         {
-            if(WindowState == FormWindowState.Normal)
+            if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
             }
@@ -162,13 +164,13 @@ namespace LibraryManagementSystem
 
         private void ibtnMinimize_Click(object sender, EventArgs e)
         {
-            WindowState= FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void ibtnSignOut_Click_1(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("You're about to sign out. Proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes)
             {
                 DefaultInterface();
                 AuthenticatedUser.SignOut();
