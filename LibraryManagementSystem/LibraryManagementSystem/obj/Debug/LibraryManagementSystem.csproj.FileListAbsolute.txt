@@ -24,3 +24,4 @@ C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\L
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\EntityFramework.xml
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\System.Data.SQLite.xml
+C:\Users\HP\Documents\GitHub\library-management-system\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Forms.BookInfoForm.resources

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using LibraryManagementSystem.Classes;
 using LibraryManagementSystem.Forms;
 
 namespace LibraryManagementSystem
@@ -107,9 +108,23 @@ namespace LibraryManagementSystem
             ibtnSignOut.Visible = true;
             ibtnSignIn.Visible = false;
             ibtnSignIn.Enabled = false;
-            ibtnSignOut.Enabled = true;
+            ibtnSignOut.Enabled = true; 
+            ibtnMyBooks.Visible = true;
+            ibtnMyBooks.Enabled = true;
             currentChildForm.Close();
-            MessageBox.Show("Method called");
+            DisableButton();
+        }
+        public void DefaultInterface()
+        {
+            ibtnSignOut.Visible = false;
+            ibtnSignIn.Visible = true;
+            ibtnSignIn.Enabled = true;
+            ibtnSignOut.Enabled = false;
+            ibtnMyBooks.Visible = false;
+            ibtnMyBooks.Enabled = false;
+            currentChildForm.Close();
+            DisableButton();
+
         }
         private void ibtnBooks_Click(object sender, EventArgs e)
         {
@@ -148,6 +163,24 @@ namespace LibraryManagementSystem
         private void ibtnMinimize_Click(object sender, EventArgs e)
         {
             WindowState= FormWindowState.Minimized;
+        }
+
+        private void ibtnSignOut_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("You're about to sign out. Proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dialogResult == DialogResult.Yes)
+            {
+                DefaultInterface();
+                AuthenticatedUser.SignOut();
+            }
+            else
+            {
+                return;
+            }
+        }
+        private void ibtnMyBooks_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(205, 252, 246));
         }
     }
 }

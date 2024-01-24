@@ -34,6 +34,7 @@
             this.ibtnExit = new FontAwesome.Sharp.IconButton();
             this.pnlSideNavBar = new System.Windows.Forms.Panel();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.ibtnMyBooks = new FontAwesome.Sharp.IconButton();
             this.ibtnSignOut = new FontAwesome.Sharp.IconButton();
             this.ibtnSignIn = new FontAwesome.Sharp.IconButton();
             this.ibtnBooks = new FontAwesome.Sharp.IconButton();
@@ -131,6 +132,7 @@
             // 
             this.pnlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlButtons.Controls.Add(this.ibtnMyBooks);
             this.pnlButtons.Controls.Add(this.ibtnSignOut);
             this.pnlButtons.Controls.Add(this.ibtnSignIn);
             this.pnlButtons.Controls.Add(this.ibtnBooks);
@@ -138,6 +140,32 @@
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(215, 357);
             this.pnlButtons.TabIndex = 2;
+            // 
+            // ibtnMyBooks
+            // 
+            this.ibtnMyBooks.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnMyBooks.Enabled = false;
+            this.ibtnMyBooks.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
+            this.ibtnMyBooks.FlatAppearance.BorderSize = 0;
+            this.ibtnMyBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnMyBooks.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ibtnMyBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
+            this.ibtnMyBooks.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.ibtnMyBooks.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
+            this.ibtnMyBooks.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnMyBooks.IconSize = 32;
+            this.ibtnMyBooks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnMyBooks.Location = new System.Drawing.Point(0, 55);
+            this.ibtnMyBooks.Name = "ibtnMyBooks";
+            this.ibtnMyBooks.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnMyBooks.Size = new System.Drawing.Size(215, 55);
+            this.ibtnMyBooks.TabIndex = 3;
+            this.ibtnMyBooks.Text = "MyBooks";
+            this.ibtnMyBooks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnMyBooks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnMyBooks.UseVisualStyleBackColor = true;
+            this.ibtnMyBooks.Visible = false;
+            this.ibtnMyBooks.Click += new System.EventHandler(this.ibtnMyBooks_Click);
             // 
             // ibtnSignOut
             // 
@@ -163,6 +191,7 @@
             this.ibtnSignOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnSignOut.UseVisualStyleBackColor = true;
             this.ibtnSignOut.Visible = false;
+            this.ibtnSignOut.Click += new System.EventHandler(this.ibtnSignOut_Click_1);
             // 
             // ibtnSignIn
             // 
@@ -277,6 +306,7 @@
         private FontAwesome.Sharp.IconButton ibtnMinimize;
         private FontAwesome.Sharp.IconButton ibtnMaximize;
         private FontAwesome.Sharp.IconButton ibtnSignOut;
+        private FontAwesome.Sharp.IconButton ibtnMyBooks;
     }
 }
 

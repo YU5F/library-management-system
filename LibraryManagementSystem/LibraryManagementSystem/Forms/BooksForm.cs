@@ -1,4 +1,5 @@
 ﻿using LibraryManagementSystem.Classes;
+using LibraryManagementSystem.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,17 +22,41 @@ namespace LibraryManagementSystem
 
         private void BooksForm_Load(object sender, EventArgs e)
         {
-            Methods.Instance.DataRefresh("Books", dataGridView1);
+            Methods.Instance.DataRefresh("Books", dgwBooks);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private int lastSelectedRow = -1;
+        private int selectedIndex = -1;
+        private void dgwBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(AuthenticatedUser.LoggedInUser.Id.ToString());
+            if(e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if(lastSelectedRow != -1)
+                {
+                    dgwBooks.Rows[lastSelectedRow].DefaultCellStyle.BackColor = Color.FromArgb(68, 60, 104);
+                }
+
+                dgwBooks.Rows[e.RowIndex].Selected = true;
+                dgwBooks.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(99, 89, 133);
+
+                selectedIndex = Convert.ToInt32(dgwBooks.Rows[e.RowIndex].Cells["ISBN"].Value);
+
+                lastSelectedRow = e.RowIndex;
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ibtnViewBook_Click(object sender, EventArgs e)
         {
-            AuthenticatedUser.SignOut();
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("Please select a book!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                BookInfoForm info = new BookInfoForm(selectedIndex);
+                info.ShowDialog();
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace LibraryManagementSystem.Forms
                         PhotoPath = dt.Rows[0]["PhotoPath"].ToString()
                     };
                     AuthenticatedUser.LoggedInUser = loggedInUser;
-                    MessageBox.Show("Login successfull");
+                    MessageBox.Show("Login successfull", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtEmail.Texts = "";
                     txtPassword.Texts = "";
                     if(MainFormInstance != null)
