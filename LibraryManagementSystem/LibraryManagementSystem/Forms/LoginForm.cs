@@ -13,16 +13,16 @@ namespace LibraryManagementSystem.Forms
 {
     public partial class LoginForm : Form
     {
-        private formMain parentForm;
-        public LoginForm(formMain parentForm)
+        public formMain MainFormInstance;
+        public LoginForm(formMain MainFormInstance)
         {
             InitializeComponent();
-            this.parentForm = parentForm;
+            this.MainFormInstance = MainFormInstance;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -37,9 +37,10 @@ namespace LibraryManagementSystem.Forms
                 string q = "SELECT * from Visitors where Email= '" + email + "' AND Password= '" + password + "'";
                 DataTable dt = CRUD.Sort(q);
 
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
-                    User loggedInUser = new User {
+                    User loggedInUser = new User
+                    {
                         Id = Convert.ToInt32(dt.Rows[0]["VisitorID"]),
                         Email = dt.Rows[0]["Email"].ToString(),
                         Name = dt.Rows[0]["Name"].ToString(),
@@ -50,7 +51,10 @@ namespace LibraryManagementSystem.Forms
                     MessageBox.Show("Login successfull");
                     txtEmail.Texts = "";
                     txtPassword.Texts = "";
-                    parentForm.LoggedInInterface();
+                    if(MainFormInstance != null)
+                    {
+                        MainFormInstance.LoggedInInterface();
+                    }
                 }
                 else
                 {

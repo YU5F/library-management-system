@@ -68,7 +68,7 @@
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(7);
-            this.txtPassword.PasswordChar = false;
+            this.txtPassword.PasswordChar = true;
             this.txtPassword.Size = new System.Drawing.Size(250, 38);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Texts = "";

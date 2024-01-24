@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using LibraryManagementSystem.Forms;
 
 namespace LibraryManagementSystem
 {
@@ -26,8 +27,6 @@ namespace LibraryManagementSystem
             buttonLeftBorder = new Panel();
             buttonLeftBorder.Size = new Size(7, 55);
             pnlButtons.Controls.Add(buttonLeftBorder);
-            ibtnSignOut.Enabled = false;
-            ibtnSignOut.Visible = false;
 
 
             //Remove border of the form
@@ -35,6 +34,7 @@ namespace LibraryManagementSystem
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
         #region HighlightActiveButton
         //Methods for highlighting active button
@@ -104,11 +104,11 @@ namespace LibraryManagementSystem
 
         public void LoggedInInterface()
         {
-            ibtnSignIn.Enabled = false;
-            ibtnSignIn.Visible = false;
-            ibtnSignOut.Enabled = true;
             ibtnSignOut.Visible = true;
-            currentChildForm = null;
+            ibtnSignIn.Visible = false;
+            ibtnSignIn.Enabled = false;
+            ibtnSignOut.Enabled = true;
+            currentChildForm.Close();
             MessageBox.Show("Method called");
         }
         private void ibtnBooks_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace LibraryManagementSystem
         private void ibtnSignIn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
-            OpenChildForm(new SignForm());
+            OpenChildForm(new SignForm(this));
         }
 
         private void ibtnSignOut_Click(object sender, EventArgs e)

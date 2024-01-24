@@ -13,14 +13,17 @@ namespace LibraryManagementSystem
 {
     public partial class SignForm : Form
     {
-        public SignForm()
+        private formMain MainFormInstance;
+        public SignForm(formMain MainFormInstance)
         {
             InitializeComponent();
+            this.MainFormInstance = MainFormInstance;
         }
 
         private void SignForm_Load(object sender, EventArgs e)
         {
-            Methods.Instance.OpenChildForm(new LoginForm(new formMain()), pnlSignForm);
+            LoginForm loginForm = new LoginForm(MainFormInstance);
+            Methods.Instance.OpenChildForm(loginForm, pnlSignForm);
         }
         public void EnableLink()
         {
