@@ -126,6 +126,11 @@ namespace LibraryManagementSystem
         }
         public void ChangeChildForm(Form form)
         {
+            if(currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = form;
             Methods.Instance.OpenChildForm(form, pnlContainer);
         }
         private void ibtnBooks_Click(object sender, EventArgs e)

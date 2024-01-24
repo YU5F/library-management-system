@@ -150,7 +150,7 @@
             this.ibtnMyBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnMyBooks.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ibtnMyBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
-            this.ibtnMyBooks.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.ibtnMyBooks.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
             this.ibtnMyBooks.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
             this.ibtnMyBooks.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnMyBooks.IconSize = 32;

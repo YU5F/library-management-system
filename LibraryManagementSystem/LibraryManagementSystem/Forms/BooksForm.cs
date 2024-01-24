@@ -58,7 +58,7 @@ namespace LibraryManagementSystem
             }
             if (AuthenticatedUser.LoggedInUser.Id == -1)
             {
-                DialogResult result = MessageBox.Show("You have to be logged in before borrowing a book! \n Sign In?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("You have to be logged in before borrowing a book! \nSign In?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
                     ParentForm.ChangeChildForm(new SignForm(ParentForm));
@@ -77,12 +77,33 @@ namespace LibraryManagementSystem
             deadline = borrowedDate.AddDays(7);
             remainingDays = (int)(deadline - borrowedDate).TotalDays;
             bookCategory = selectedCategory;
-            MessageBox.Show(borrowedDate + " " + deadline + " " + remainingDays + "\n" + bookISBN + " " + bookCategory + " \n" + borrowedByID + " " + borrowedByName);
 
-            string q = "Insert into BorrowInformation values('" + bookISBN + "','" + bookCategory + "','" + borrowedByID + "','" + borrowedByName + "','" + borrowedDate.ToString() + "','" + deadline.ToString() + "','" + remainingDays + "')";
-            if (CRUD.ExecQuery(q))
+            if (DoesBookExist(bookISBN))
             {
-                MessageBox.Show("You have borrowed the book " + bookISBN);
+                MessageBox.Show("You've already borrowed this book", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string q = "Insert into BorrowInformation values('" + bookISBN + "','" + bookCategory + "','" + borrowedByID + "','" + borrowedByName + "','" + borrowedDate.ToString() + "','" + deadline.ToString() + "','" + remainingDays + "')";
+                if (CRUD.ExecQuery(q))
+                {
+                    MessageBox.Show("You have borrowed the book!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }
+
+        private bool DoesBookExist(int ISBN)
+        {
+            string q = "Select * from BorrowInformation where BookISBN = '" + ISBN + "'";
+            DataTable dt = CRUD.Sort(q);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
