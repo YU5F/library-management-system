@@ -71,7 +71,7 @@
             this.txtPassword.PasswordChar = true;
             this.txtPassword.Size = new System.Drawing.Size(250, 38);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Texts = "123456";
+            this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = true;
             // 
             // txtEmail
@@ -88,7 +88,7 @@
             this.txtEmail.PasswordChar = false;
             this.txtEmail.Size = new System.Drawing.Size(250, 38);
             this.txtEmail.TabIndex = 1;
-            this.txtEmail.Texts = "yusufcetin@gmail.com";
+            this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = true;
             // 
             // btnLogin
