@@ -20,11 +20,15 @@ namespace LibraryManagementSystem.Forms
     {
         private SignForm signForm;
         private string selectedFileName;
-        private static string selectedPhotoPath = @"~\image\default.jpg";
+        private static string selectedPhotoPath;
+        private string defaultPhotoPath;
         public RegisterForm(SignForm parentForm)
         {
             InitializeComponent();
             signForm = parentForm;
+
+            defaultPhotoPath = @"~\image\default.jpg";
+            selectedPhotoPath = defaultPhotoPath;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -60,7 +64,11 @@ namespace LibraryManagementSystem.Forms
             signdate = DateTime.Now.ToString();
             password = txtPassword.Texts;
 
-            SavePicture(selectedFileName);
+            if(selectedFileName != null)
+            {
+                SavePicture(selectedFileName);
+            }
+
             string q = "Insert into Visitors(Email,Name,Surname,UserName,SignDate,Password,PhotoPath) Values('" + email + "','" + name + "','"
                + surname + "','" + username + "','" + signdate + "','" + password + "','" + selectedPhotoPath + "')";
             if (CRUD.ExecQuery(q))

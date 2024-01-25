@@ -111,6 +111,10 @@ namespace LibraryManagementSystem
             ibtnSignOut.Enabled = true;
             ibtnMyBooks.Visible = true;
             ibtnMyBooks.Enabled = true;
+            pictureUserProfile.ImageLocation = AuthenticatedUser.LoggedInUser.PhotoPath;
+            lblUsername.Text = AuthenticatedUser.LoggedInUser.Name + " " + AuthenticatedUser.LoggedInUser.Surname;
+            int parentCenterX = (pnlSideNavBar.Size.Width - lblUsername.Width) / 2;
+            lblUsername.Location = new Point(parentCenterX, lblUsername.Location.Y);
             currentChildForm.Close();
             DisableButton();
         }
@@ -122,12 +126,16 @@ namespace LibraryManagementSystem
             ibtnSignOut.Enabled = false;
             ibtnMyBooks.Visible = false;
             ibtnMyBooks.Enabled = false;
+            pictureUserProfile.ImageLocation = AuthenticatedUser.LoggedInUser.PhotoPath;
+            lblUsername.Text = AuthenticatedUser.LoggedInUser.Name;
+            int parentCenterX = (pnlSideNavBar.Size.Width - lblUsername.Width) / 2;
+            lblUsername.Location = new Point(parentCenterX, lblUsername.Location.Y);
             currentChildForm.Close();
             DisableButton();
         }
         public void ChangeChildForm(Form form)
         {
-            if(currentChildForm != null)
+            if (currentChildForm != null)
             {
                 currentChildForm.Close();
             }
@@ -181,17 +189,14 @@ namespace LibraryManagementSystem
             DialogResult dialogResult = MessageBox.Show("You're about to sign out. Proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                DefaultInterface();
                 AuthenticatedUser.SignOut();
-            }
-            else
-            {
-                return;
+                DefaultInterface();
             }
         }
         private void ibtnMyBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
+            Methods.Instance.OpenChildForm(new UserBooks(), pnlContainer);
         }
         #endregion
     }

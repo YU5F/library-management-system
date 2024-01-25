@@ -70,8 +70,8 @@
             this.txtPassword.Padding = new System.Windows.Forms.Padding(7);
             this.txtPassword.PasswordChar = true;
             this.txtPassword.Size = new System.Drawing.Size(250, 38);
-            this.txtPassword.TabIndex = 3;
-            this.txtPassword.Texts = "";
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Texts = "123456";
             this.txtPassword.UnderlinedStyle = true;
             // 
             // txtEmail
@@ -87,8 +87,8 @@
             this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
             this.txtEmail.PasswordChar = false;
             this.txtEmail.Size = new System.Drawing.Size(250, 38);
-            this.txtEmail.TabIndex = 3;
-            this.txtEmail.Texts = "";
+            this.txtEmail.TabIndex = 1;
+            this.txtEmail.Texts = "yusufcetin@gmail.com";
             this.txtEmail.UnderlinedStyle = true;
             // 
             // btnLogin
@@ -99,7 +99,7 @@
             this.btnLogin.Location = new System.Drawing.Point(397, 195);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(115, 41);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);

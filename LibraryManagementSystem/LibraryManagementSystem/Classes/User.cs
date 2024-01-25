@@ -23,8 +23,8 @@ namespace LibraryManagementSystem.Classes
         {
             Id = -1;
             Email = "none";
-            PhotoPath = "default.png";
-            Name = "Gues";
+            PhotoPath = @"~\image\default.jpg";
+            Name = "Guest";
             Surname = "Visitor";
         }
 

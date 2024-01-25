@@ -40,12 +40,12 @@
             this.ibtnSignIn = new FontAwesome.Sharp.IconButton();
             this.ibtnBooks = new FontAwesome.Sharp.IconButton();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureUserProfile = new System.Windows.Forms.PictureBox();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlTopGrip.SuspendLayout();
             this.pnlSideNavBar.SuspendLayout();
             this.pnlButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTopGrip
@@ -121,7 +121,7 @@
             this.pnlSideNavBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(60)))), ((int)(((byte)(104)))));
             this.pnlSideNavBar.Controls.Add(this.pnlButtons);
             this.pnlSideNavBar.Controls.Add(this.lblUsername);
-            this.pnlSideNavBar.Controls.Add(this.pictureBox1);
+            this.pnlSideNavBar.Controls.Add(this.pictureUserProfile);
             this.pnlSideNavBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSideNavBar.Location = new System.Drawing.Point(0, 34);
             this.pnlSideNavBar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -177,7 +177,7 @@
             this.ibtnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnSignOut.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ibtnSignOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
-            this.ibtnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.ibtnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOut;
             this.ibtnSignOut.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
             this.ibtnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnSignOut.IconSize = 32;
@@ -202,7 +202,7 @@
             this.ibtnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnSignIn.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ibtnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
-            this.ibtnSignIn.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.ibtnSignIn.IconChar = FontAwesome.Sharp.IconChar.SignIn;
             this.ibtnSignIn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
             this.ibtnSignIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnSignIn.IconSize = 32;
@@ -247,23 +247,24 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
-            this.lblUsername.Location = new System.Drawing.Point(65, 172);
+            this.lblUsername.Location = new System.Drawing.Point(71, 172);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(81, 23);
+            this.lblUsername.Size = new System.Drawing.Size(72, 23);
             this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Visitor";
+            this.lblUsername.Text = "Guest";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // pictureUserProfile
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(89)))), ((int)(((byte)(133)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(35, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(89)))), ((int)(((byte)(133)))));
+            this.pictureUserProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureUserProfile.Image")));
+            this.pictureUserProfile.Location = new System.Drawing.Point(35, 18);
+            this.pictureUserProfile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pictureUserProfile.Name = "pictureUserProfile";
+            this.pictureUserProfile.Size = new System.Drawing.Size(145, 145);
+            this.pictureUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureUserProfile.TabIndex = 0;
+            this.pictureUserProfile.TabStop = false;
             // 
             // pnlContainer
             // 
@@ -290,7 +291,7 @@
             this.pnlSideNavBar.ResumeLayout(false);
             this.pnlSideNavBar.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,7 +300,7 @@
 
         private System.Windows.Forms.Panel pnlTopGrip;
         private System.Windows.Forms.Panel pnlSideNavBar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureUserProfile;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Panel pnlButtons;
         private FontAwesome.Sharp.IconButton ibtnBooks;
