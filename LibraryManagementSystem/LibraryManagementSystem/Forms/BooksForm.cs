@@ -31,6 +31,7 @@ namespace LibraryManagementSystem
         private int selectedIndex = -1;
         private string selectedCategory;
         private string selectedName;
+        private int stock;
         private void dgwBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -46,6 +47,7 @@ namespace LibraryManagementSystem
                 selectedIndex = Convert.ToInt32(dgwBooks.Rows[e.RowIndex].Cells["ISBN"].Value);
                 selectedCategory = dgwBooks.Rows[e.RowIndex].Cells["Category"].Value.ToString();
                 selectedName = dgwBooks.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+                stock = Convert.ToInt32(dgwBooks.Rows[e.RowIndex].Cells["Stock"].Value);
 
                 lastSelectedRow = e.RowIndex;
             }
@@ -68,7 +70,7 @@ namespace LibraryManagementSystem
                 }
                 return;
             }
-            int bookISBN, borrowedByID, remainingDays;
+            int bookISBN, borrowedByID;
             string bookCategory, borrowedByName, bookName;
             DateTime borrowedDate, deadline;
 
@@ -86,14 +88,23 @@ namespace LibraryManagementSystem
             }
             else
             {
-                DialogResult result = MessageBox.Show("Borrow book " + bookName + "?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (stock > 0)
                 {
-                    string q = "Insert into BorrowInformation values('" + bookISBN + "','" + bookName + "','" + bookCategory + "','" + borrowedByID + "','" + borrowedByName + "','" + borrowedDate.ToString() + "','" + deadline.ToString()  + "')";
-                    if (CRUD.ExecQuery(q))
+                    DialogResult result = MessageBox.Show("Borrow book " + bookName + "?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("You have borrowed the book!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Methods.Instance.DecreaseStock(bookISBN);
+                        string q = "Insert into BorrowInformation values('" + bookISBN + "','" + bookName + "','" + bookCategory + "','" + borrowedByID + "','" + borrowedByName + "','" + borrowedDate.ToString() + "','" + deadline.ToString() + "')";
+                        if (CRUD.ExecQuery(q))
+                        {
+                            MessageBox.Show("You have borrowed the book!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        Methods.Instance.DataRefresh("Books", dgwBooks);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("This book is out of stocks.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

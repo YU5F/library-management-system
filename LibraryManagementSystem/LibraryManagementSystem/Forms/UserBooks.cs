@@ -13,9 +13,11 @@ namespace LibraryManagementSystem.Forms
 {
     public partial class UserBooks : Form
     {
-        public UserBooks()
+        formMain parentForm;
+        public UserBooks(formMain parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private int lastSelectedRow = -1;
@@ -27,9 +29,7 @@ namespace LibraryManagementSystem.Forms
 
         private void UserBooks_Load(object sender, EventArgs e)
         {
-            string q = "Select BookISBN, BookName, BookCategory, BorrowedDate, Deadline from BorrowInformation where BorrowedByID = " + AuthenticatedUser.LoggedInUser.Id;
-            DataTable dt = CRUD.Sort(q);
-            dgwUserBooks.DataSource = dt;
+            Refresh();
         }
         private void dgwUserBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,13 +63,36 @@ namespace LibraryManagementSystem.Forms
             if (dt.Rows.Count > 0)
             {
                 ClearLabels();
-                lblName.Text += dt.Rows[0]["Name"];
+                lblName.Text += selectedName;
                 lblAuthor.Text += dt.Rows[0]["Author"];
                 lblBorrowedDate.Text += borrowedDate.Date.ToString("yyyy-MM-dd");
                 lblCategory.Text += selectedCategory;
                 lblDeadline.Text += deadline.Date.ToString("yyyy-MM-dd");
                 lblRemainingDays.Text += remainingDays.ToString();
             }
+        }
+
+        private void ibtnReturnBook_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("You're about to return the book!\nThere are still " + remainingDays + " days until deadline.\nContinue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                string q = "Delete from BorrowInformation where BookISBN=" + selectedIndex + " AND BorrowedByID=" + AuthenticatedUser.LoggedInUser.Id;
+                if (CRUD.ExecQuery(q))
+                {
+                    Methods.Instance.IncreaseStock(selectedIndex);
+                    MessageBox.Show("You've returned the book!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Refresh();
+                    ClearLabels();
+                    pnlDownBar.Visible = false;
+                }
+            }
+        }
+        private void Refresh()
+        {
+            string q = "Select BookISBN, BookName, BookCategory, BorrowedDate, Deadline from BorrowInformation where BorrowedByID = " + AuthenticatedUser.LoggedInUser.Id;
+            DataTable dt = CRUD.Sort(q);
+            dgwUserBooks.DataSource = dt;
         }
         private void ClearLabels()
         {

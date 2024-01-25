@@ -61,5 +61,15 @@ namespace LibraryManagementSystem
             form.BringToFront();
             form.Show();
         }
+        public void IncreaseStock(int bookId)
+        {
+            string q = "Update Books set Stock = Stock + 1, BorrowedAmount = BorrowedAmount - 1 where ISBN = " + bookId;
+            CRUD.ExecQuery(q);
+        }
+        public void DecreaseStock(int bookId)
+        {
+            string q = "Update Books set Stock = Stock - 1, BorrowedAmount = BorrowedAmount + 1 where ISBN = " + bookId;
+            CRUD.ExecQuery(q);
+        }
     }
 }
