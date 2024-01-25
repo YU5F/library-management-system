@@ -16,10 +16,12 @@ namespace LibraryManagementSystem
     public partial class BooksForm : Form
     {
         public formMain ParentForm;
+        private bool filterButtonClicked;
         public BooksForm(formMain ParentForm)
         {
             InitializeComponent();
             this.ParentForm = ParentForm;
+            filterButtonClicked= false;
         }
 
         private void BooksForm_Load(object sender, EventArgs e)
@@ -100,6 +102,8 @@ namespace LibraryManagementSystem
                             MessageBox.Show("You have borrowed the book!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         RefreshData();
+                        pnlFilter.Visible = false;
+                        filterButtonClicked = false;
                     }
                 }
                 else
@@ -130,7 +134,28 @@ namespace LibraryManagementSystem
 
         private void ibtnFilter_Click(object sender, EventArgs e)
         {
+            if (!filterButtonClicked)
+            {
+                filterButtonClicked= true;
+                pnlFilter.Visible = true;
+                return;
+            }
+            if (filterButtonClicked)
+            {
+                filterButtonClicked= false;
+                pnlFilter.Visible = false;
+                txtAuthor.Texts = "";
+                txtCategory.Texts = "";
+                txtName.Texts= "";
+                return;
+            }
+        }
 
+        private void SearchData(string column, string value)
+        {
+            string q = "Select * from Books where " + column + " Like '%" + value + "%'";
+            DataTable dt = CRUD.Sort(q);
+            dgwBooks.DataSource = dt;
         }
 
         private void ibtnAddBook_Click(object sender, EventArgs e)
@@ -147,6 +172,21 @@ namespace LibraryManagementSystem
             }
             AddBookForm addForm = new AddBookForm(this);
             addForm.ShowDialog();
+        }
+
+        private void txtName__TextChanged(object sender, EventArgs e)
+        {
+            SearchData("Name", txtName.Texts);
+        }
+
+        private void txtCategory__TextChanged(object sender, EventArgs e)
+        {
+            SearchData("Category", txtCategory.Texts);
+        }
+
+        private void txtAuthor__TextChanged(object sender, EventArgs e)
+        {
+            SearchData("Author", txtAuthor.Texts);
         }
     }
 }
