@@ -24,7 +24,7 @@ namespace LibraryManagementSystem
 
         private void BooksForm_Load(object sender, EventArgs e)
         {
-            Methods.Instance.DataRefresh("Books", dgwBooks);
+            RefreshData();
         }
 
         private int lastSelectedRow = -1;
@@ -99,7 +99,7 @@ namespace LibraryManagementSystem
                         {
                             MessageBox.Show("You have borrowed the book!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        Methods.Instance.DataRefresh("Books", dgwBooks);
+                        RefreshData();
                     }
                 }
                 else
@@ -123,9 +123,30 @@ namespace LibraryManagementSystem
             }
         }
 
+        public void RefreshData()
+        {
+            Methods.Instance.DataRefresh("Books", dgwBooks);
+        }
+
         private void ibtnFilter_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ibtnAddBook_Click(object sender, EventArgs e)
+        {
+            if (AuthenticatedUser.LoggedInUser.Id == -1)
+            {
+                DialogResult result = MessageBox.Show("You have to be logged in before adding a book! \nSign In?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    ParentForm.ChangeChildForm(new SignForm(ParentForm));
+                    ParentForm.DisableButton();
+                }
+                return;
+            }
+            AddBookForm addForm = new AddBookForm(this);
+            addForm.ShowDialog();
         }
     }
 }

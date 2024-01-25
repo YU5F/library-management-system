@@ -184,7 +184,6 @@ namespace LibraryManagementSystem
             DialogResult dialogResult = MessageBox.Show("You're about to sign out. Proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                currentChildForm.Close();
                 AuthenticatedUser.SignOut();
                 DefaultInterface();
             }
@@ -192,7 +191,7 @@ namespace LibraryManagementSystem
         private void ibtnMyBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(205, 252, 246));
-            Methods.Instance.OpenChildForm(new UserBooks(this), pnlContainer);
+            OpenChildForm(new UserBooks(this));
         }
         #endregion
     }

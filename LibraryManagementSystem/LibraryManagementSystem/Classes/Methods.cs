@@ -44,7 +44,7 @@ namespace LibraryManagementSystem
                     if (txtbox.Texts == string.Empty)
                     {
                         string txtboxName = txtbox.Name;
-                        MessageBox.Show(txtboxName.Substring(3) + " is empty");
+                        MessageBox.Show(txtboxName.Substring(3) + " is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return true;
                     }
                 }

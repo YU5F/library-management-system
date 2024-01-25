@@ -35,7 +35,7 @@ namespace LibraryManagementSystem.Forms
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                if (lastSelectedRow != -1)
+                if (lastSelectedRow > -1)
                 {
                     dgwUserBooks.Rows[lastSelectedRow].DefaultCellStyle.BackColor = Color.FromArgb(68, 60, 104);
                 }
@@ -51,11 +51,11 @@ namespace LibraryManagementSystem.Forms
                 remainingDays = (int)(deadline - DateTime.Now).TotalDays;
 
                 lastSelectedRow = e.RowIndex;
-            }
 
-            if (pnlDownBar.Visible == false)
-            {
-                pnlDownBar.Visible = true;
+                if (pnlDownBar.Visible == false)
+                {
+                    pnlDownBar.Visible = true;
+                }
             }
             string q = "Select * from Books where ISBN = " + selectedIndex;
             DataTable dt = CRUD.Sort(q);
@@ -82,6 +82,7 @@ namespace LibraryManagementSystem.Forms
                 {
                     Methods.Instance.IncreaseStock(selectedIndex);
                     MessageBox.Show("You've returned the book!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lastSelectedRow = -1;
                     Refresh();
                     ClearLabels();
                     pnlDownBar.Visible = false;

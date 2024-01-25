@@ -164,5 +164,10 @@ namespace LibraryManagementSystem.Controls
                 _TextChanged(sender, e);
             }
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.OnKeyPress(e);
+        }
     }
 }
